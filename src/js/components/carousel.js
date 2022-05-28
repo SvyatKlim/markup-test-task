@@ -3,7 +3,9 @@ import Swiper, {Pagination} from 'swiper';
 Swiper.use([Pagination]);
 
 const Carousel = (container) => {
-  const paginationBulletName = ['Targeted Panels', 'Whole Exome Sequencing', 'lcWGS and Microarrays']
+
+  let paginationBulletName = [];
+    $('.benefits__item__info').each((i,el) => paginationBulletName.push($(el).data('name')))
 
   const swiper = new Swiper(container, {
     slidesPerView: 1,

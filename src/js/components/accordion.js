@@ -23,7 +23,7 @@ const accordion = (btn, content, container) => {
       })
 
       let img = $('.js-img');
-      let currentAttr = img.attr('src'), newAttr = `../assets/img/picture/${$(el).data('image')}`;
+      let currentAttr = img.attr('src'), newAttr = $(el).data('image');
       if(currentAttr!== newAttr) {
         img.fadeOut(300, function () {
           img.attr('src', newAttr)
