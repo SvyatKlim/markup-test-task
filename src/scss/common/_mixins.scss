@@ -1,0 +1,12 @@
+@mixin animation-mixin($name, $from,$fromDisplay, $to, $toDisplay) {
+  @keyframes #{$name} {
+    from {
+      display: $fromDisplay;
+      transform: translate($from);
+    }
+    to {
+      display: $toDisplay;
+      transform: translate($to);
+    }
+  }
+}

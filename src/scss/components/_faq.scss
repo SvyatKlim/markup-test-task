@@ -1,0 +1,112 @@
+.faq {
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list {
+    &__item {
+      overflow: hidden;
+      transition: height 400ms cubic-bezier(0.4, 0.01, 0.165, 0.99);
+      padding-bottom: 25px;
+      padding-top: 25px;
+      border-top: 1px solid rgba($border-gray, 0.9);
+
+      &:first-child {
+        border: none;
+      }
+
+      &.opened {
+        cursor: pointer;
+
+        .faq__list__item__title {
+          color: $black;
+
+          .arrow {
+            top: -3px;
+            transform: rotate(0);
+          }
+        }
+      }
+
+      &__title {
+        padding: 0 33px 0 0;
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        transition: color 0.3s ease-out;
+
+        .arrow {
+          position: relative;
+          top: 5px;
+          margin-left: auto;
+          transform: rotate(180deg);
+          transition: transform 0.2s ease-out, top 0.1s linear;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            color: $dark-gray;
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    display: none;
+    padding-top: 25px;
+  }
+
+  &__list, &__img {
+    width: 45%
+  }
+
+  &__img {
+    border-radius: 3px;
+    box-shadow: 0 0 44px 10px $box-shadow;
+    display: flex;
+    justify-content: center;
+    &--mobile{
+      display: none;
+    }
+    img {
+      max-height: 522px;
+      max-width: 570px;
+    }
+  }
+
+  @media screen and (max-width: 1680px) {
+    &__img {
+      img {
+        max-height: 467px;
+        max-width: 428px;
+      }
+    }
+    &__list {
+      width: 37%;
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    &__list {
+      width: 45%;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    &__img {
+      display: none;
+      &--mobile{
+        display: flex;
+        margin: 0 auto 25px;
+        width: 295px;
+        min-height: 270px;
+      }
+    }
+    &__list{
+      width: 100%;
+    }
+  }
+}

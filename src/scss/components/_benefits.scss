@@ -1,0 +1,155 @@
+.benefits {
+  background-color: $gray-bg;
+
+
+  &__carousel {
+    display: flex;
+    flex-direction: column;
+    //margin: 0 -40px 0;
+  }
+
+  &__items {
+    order: 2;
+    padding: 40px;
+  }
+
+  &__pagination {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      opacity: 1;
+      width: auto;
+      height: auto;
+      display: inline-flex;
+      background: none;
+      transition: color 0.3s linear;
+
+      &.swiper-pagination-bullet-active {
+        color: $dark-blue;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: $blue;
+
+          &.swiper-pagination-bullet-active {
+            color: $dark-blue;
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    cursor: grab;
+    opacity: 0;
+    transition: opacity 0.4s;
+
+    &.swiper-slide-active {
+      opacity: 1;
+    }
+
+    &:active {
+      cursor: grabbing;
+      cursor: -moz-grabbing;
+      cursor: -webkit-grabbing;
+    }
+
+    &__title--mobile {
+      display: none;
+    }
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding: 60px 65px;
+      background-color: $white;
+      border-radius: 3px;
+      box-shadow: 0 0 44px 10px $box-shadow;
+      position: relative;
+      width: calc(100% - 80px);
+    }
+
+    &__info {
+      width: 50%;
+      margin-right: auto;
+    }
+
+    &__img {
+      width: 40%;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    &__item__wrapper {
+      padding: 40px;
+      width: 100%;
+    }
+    &__items{
+      padding: 40px 0;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    &__carousel {
+      padding: 0 20px;
+    }
+    &__item {
+      cursor: grab;
+      opacity: 1;
+
+      &__title {
+        display: none;
+
+        &--mobile {
+          display: block;
+          text-align: center;
+        }
+      }
+
+      &__wrapper {
+        flex-direction: column;
+      }
+
+      &__info {
+        order: 2;
+        width: 100%;
+      }
+
+      &__img {
+        order: 1;
+        width: 100%;
+        max-width: 315px;
+        max-height: 315px;
+        margin: 20px auto 25px;
+      }
+    }
+    &__items {
+      order: 1;
+      padding: 0 0 40px;
+    }
+    &__pagination {
+      order: 2;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    &__carousel {
+      padding: 0 10px;
+    }
+    &__items {
+      padding: 0 0 20px;
+    }
+    &__item {
+      &__wrapper {
+        padding: 20px 20px 30px;
+      }
+
+      &__title--mobile {
+        max-width: 170px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
